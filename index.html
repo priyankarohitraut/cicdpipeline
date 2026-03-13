@@ -2,59 +2,53 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Royal Enfield Showroom</title>
 
 <style>
+
 body{
-    font-family: Arial, sans-serif;
-    background:#f2f2f2;
-    margin:0;
+font-family: Arial;
+background:#f4f4f4;
 }
 
 .container{
-    width:400px;
-    margin:50px auto;
-    background:white;
-    padding:20px;
-    border-radius:8px;
-    box-shadow:0 0 10px gray;
+width:400px;
+margin:60px auto;
+background:white;
+padding:20px;
+border-radius:8px;
+box-shadow:0px 0px 10px gray;
 }
 
 h1{
-    text-align:center;
-    color:#b30000;
-}
-
-h2{
-    text-align:center;
+text-align:center;
+color:#b30000;
 }
 
 input, textarea, select{
-    width:100%;
-    padding:8px;
-    margin-top:5px;
-    margin-bottom:15px;
-    border:1px solid #ccc;
-    border-radius:4px;
+width:100%;
+padding:8px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:4px;
 }
 
 button{
-    width:100%;
-    padding:10px;
-    background:#b30000;
-    color:white;
-    border:none;
-    border-radius:4px;
-    cursor:pointer;
+width:100%;
+padding:10px;
+background:#b30000;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
 }
 
 button:hover{
-    background:#800000;
+background:#800000;
 }
 
-#welcomePage{
-    display:none;
+#welcome{
+display:none;
 }
 
 </style>
@@ -62,20 +56,24 @@ button:hover{
 <script>
 
 function login(){
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
 
-    if(username !== "" && password !== ""){
-        document.getElementById("loginPage").style.display="none";
-        document.getElementById("welcomePage").style.display="block";
-    }
-    else{
-        alert("Please enter username and password");
-    }
+var user=document.getElementById("username").value;
+var pass=document.getElementById("password").value;
+
+if(user!="" && pass!="")
+{
+document.getElementById("login").style.display="none";
+document.getElementById("welcome").style.display="block";
+}
+else
+{
+alert("Enter username and password");
 }
 
-function submitFeedback(){
-    alert("Thank you for your feedback!");
+}
+
+function feedback(){
+alert("Thank you for your feedback!");
 }
 
 </script>
@@ -84,15 +82,14 @@ function submitFeedback(){
 
 <body>
 
-<div class="container" id="loginPage">
+<div class="container" id="login">
 
 <h1>Royal Enfield Showroom</h1>
-<h2>Login Page</h2>
 
-<label>Username</label>
+<h3>Login</h3>
+
 <input type="text" id="username" placeholder="Enter Username">
 
-<label>Password</label>
 <input type="password" id="password" placeholder="Enter Password">
 
 <button onclick="login()">Login</button>
@@ -100,31 +97,31 @@ function submitFeedback(){
 </div>
 
 
-<div class="container" id="welcomePage">
+<div class="container" id="welcome">
 
 <h1>Welcome to Royal Enfield Showroom</h1>
 
-<h2>Customer Feedback Form</h2>
+<a href="showroom.html">
+<button>Visit Showroom</button>
+</a>
 
-<label>Name</label>
-<input type="text" placeholder="Enter your name">
+<h3>Customer Feedback</h3>
 
-<label>Email</label>
-<input type="email" placeholder="Enter your email">
+<input type="text" placeholder="Your Name">
 
-<label>Which Bike Do You Like?</label>
+<input type="email" placeholder="Email">
+
 <select>
 <option>Classic 350</option>
 <option>Bullet 350</option>
-<option>Hunter 350</option>
 <option>Meteor 350</option>
+<option>Hunter 350</option>
 <option>Himalayan</option>
 </select>
 
-<label>Your Feedback</label>
-<textarea rows="4" placeholder="Write your feedback"></textarea>
+<textarea rows="4" placeholder="Write feedback"></textarea>
 
-<button onclick="submitFeedback()">Submit Feedback</button>
+<button onclick="feedback()">Submit Feedback</button>
 
 </div>
 
